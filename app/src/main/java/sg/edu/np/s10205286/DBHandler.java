@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 public class DBHandler extends SQLiteOpenHelper {
     public DBHandler(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, "UserDB", null, 1);
+        super(context, name, factory, version);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close(); // close database
     }
 
-    public ArrayList<User> getUserList() {
+    public ArrayList<User> getUsers() {
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM USERS", null);
         ArrayList<User> tempUsers = new ArrayList<>();

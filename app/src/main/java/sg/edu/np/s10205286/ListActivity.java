@@ -25,7 +25,7 @@ public class ListActivity extends AppCompatActivity {
         DBHandler db = new DBHandler(this, "UserDB", null, 1);
 
         RecyclerView rv = findViewById(R.id.rv);
-        UsersAdapter listAdapter = new UsersAdapter(db.getUserList());
+        UsersAdapter listAdapter = new UsersAdapter(db.getUsers());
         LinearLayoutManager mlm = new LinearLayoutManager(this);
 
         rv.setLayoutManager(mlm);
